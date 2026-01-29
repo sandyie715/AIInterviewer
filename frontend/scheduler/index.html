@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Scheduling System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Interview Scheduling System</h1>
+            <p>Professional AI-Powered Candidate Assessment Platform</p>
+        </div>
+
+        <div class="content">
+            <h2 class="section-title">📋 Schedule a New Interview</h2>
+
+            <div id="errorAlert" class="alert alert-error"></div>
+            <div id="successAlert" class="alert alert-success"></div>
+
+            <form id="scheduleForm" onsubmit="scheduleInterview(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="candidateName">Candidate Name *</label>
+                        <input type="text" id="candidateName" required placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="candidateEmail">Candidate Email *</label>
+                        <input type="email" id="candidateEmail" required placeholder="candidate@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jobDescription">Job Description *</label>
+                    <textarea id="jobDescription" required placeholder="Paste the complete job description here..."></textarea>
+                    <div class="form-hint">Be specific about required skills and experience level</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startTime">Interview Start Time (IST) *</label>
+                        <input type="datetime-local" id="startTime" required>
+                        <div class="form-hint">Select when the interview should begin</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">Interview End Time (IST) *</label>
+                        <input type="datetime-local" id="endTime" required>
+                        <div class="form-hint">Minimum duration: 15 minutes</div>
+                    </div>
+                </div>
+
+                <div id="confirmationBox" class="confirmation-box">
+                    <h3>✅ Interview Scheduled Successfully!</h3>
+                    <p>Email sent to: <strong id="sentEmail"></strong></p>
+                    <p style="margin-top: 20px; font-size: 0.9rem;">Candidate will receive all interview details and joining link via email.</p>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary" id="scheduleBtn">
+                        📅 Schedule Interview
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

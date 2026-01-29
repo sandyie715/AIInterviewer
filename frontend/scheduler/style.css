@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:  #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #F06767 0%, #E85555 100%);
+    color: #FFFFFF;
+    padding: 45px 35px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+.header p {
+    font-size: 16px;
+    opacity: 0.95;
+    color: #FFFFFF;
+}
+
+.content {
+    padding: 50px 45px;
+    background: #FFFFFF;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #333333;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"],
+textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #CCCCCC;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #FFFFFF;
+    color: #333333;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #777777;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #F06767;
+    box-shadow: 0 0 0 4px rgba(240, 103, 103, 0.1);
+    background: #FFFFFF;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #333333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.alert {
+    padding: 16px 22px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    border-left: 5px solid;
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+.alert-error {
+    background: #FFE5E5;
+    color: #D32F2F;
+    border-left-color: #F06767;
+}
+
+.alert-success {
+    background: #E8F5E9;
+    color: #2e7d32;
+    border-left-color: #4caf50;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: 18px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+button {
+    padding: 16px 45px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #F06767 0%, #E85555 100%);
+    color: #FFFFFF;
+    box-shadow: 0 10px 25px rgba(240, 103, 103, 0.35);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(240, 103, 103, 0.45);
+    background: linear-gradient(135deg, #E85555 0%, #D94444 100%);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.confirmation-box {
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFCCCC 100%);
+    border: 2px solid #F06767;
+    border-radius: 18px;
+    padding: 35px;
+    margin-top: 35px;
+    text-align: center;
+    display: none;
+}
+
+.confirmation-box.show {
+    display: block;
+    animation: slideIn 0.4s ease;
+}
+
+.confirmation-box h3 {
+    color: #333333;
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.confirmation-box p {
+    color: #333333;
+    margin: 12px 0;
+}
+
+.confirmation-box strong {
+    color: #F06767;
+}
+
+.form-hint {
+    font-size: 13px;
+    color: #777777;
+    margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .content {
+        padding: 30px 25px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
